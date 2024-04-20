@@ -1,0 +1,14 @@
+footer {
+  padding: 10px;
+  background-color: coral;
+  color: aliceblue;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+footer span {
+  color: darkslateblue;
+  font-size: 22px;
+}
