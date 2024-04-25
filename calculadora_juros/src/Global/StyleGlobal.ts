@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   font-family: "Jetbrains Mono Regular";
+  list-style: none;
+  text-decoration: none;
 }
     body {
         height: 100vh;

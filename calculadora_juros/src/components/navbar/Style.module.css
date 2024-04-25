@@ -1,0 +1,15 @@
+.list_item {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.list_item a {
+  color: aliceblue;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 46px;
+}

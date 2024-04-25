@@ -1,0 +1,58 @@
+.form {
+  padding: 10px;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form_group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  align-items: center;
+  padding: 10px;
+}
+
+.form_group_label {
+  margin-right: 8px;
+  color: darkblue;
+}
+
+.form_group_input {
+  max-width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid lightblue;
+  outline-color: darkcyan;
+  color: darkblue;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.form_group_submit {
+  width: 140px;
+  height: 30px;
+  margin: 0 auto;
+  background-color: greenyellow;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.fees_type {
+  color: darkblue;
+  font-size: larger;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 26px;
+}
+
+.quest {
+  margin-bottom: 16px;
+}

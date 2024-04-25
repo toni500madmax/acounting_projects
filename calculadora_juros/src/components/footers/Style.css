@@ -1,6 +1,6 @@
 footer {
   padding: 10px;
-  background-color: coral;
+  background-color: darkslateblue;
   color: aliceblue;
   position: absolute;
   bottom: 0;
@@ -9,6 +9,6 @@ footer {
 }
 
 footer span {
-  color: darkslateblue;
+  color: greenyellow;
   font-size: 22px;
 }
