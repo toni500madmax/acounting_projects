@@ -3,14 +3,14 @@ import styles from "../../Fields/FormStyle.module.css";
 import InputCapital from "../../Fields/InputCapital";
 import InputTaxaJuros from "../../Fields/InputTaxaJuros";
 import InputTempo from "../../Fields/InputTempo";
-/* import TableSimples from "../../Tables"; */
+import Tables from "../../Tables";
 
 export default function CalculadoraDeJurosSimples() {
   const [capital, setCapital] = useState("");
   const [taxaJuros, setTaxaJuros] = useState("");
   const [meses, setMeses] = useState("");
   const [resultado, setResultado] = useState(0);
-  /* const [table, setTable] = useState(false); */
+  const [table, setTable] = useState(false);
 
   function handleOnCLick(e: { preventDefault: () => void }) {
     e.preventDefault();
@@ -21,7 +21,7 @@ export default function CalculadoraDeJurosSimples() {
     setResultado(
       parseFloat(valCapital) * (parseFloat(taxaJuros) / 100) * parseInt(meses)
     );
-    /* setTable(true); */
+    setTable(true);
   }
 
   return (
@@ -57,14 +57,15 @@ export default function CalculadoraDeJurosSimples() {
         <h2 className={styles.answer}>
           O rendimento no final do período será de: R$ {resultado.toFixed(2)}.
         </h2>
-        {/* {table && (
-          <TableSimples
+        {table && (
+          <Tables
+            jurosTipo="simples"
             capital={Number(capital)}
             Mes={Number(meses)}
-            JurosMensal={Number(taxaJuros)}
-            ValorMensal={Number(meses)}
+            JurosMensal={Number(parseInt(taxaJuros) * 100)}
+            ValorMensal={Number(resultado / parseInt(meses))}
           />
-        )} */}
+        )}
       </div>
     </div>
   );

@@ -3,12 +3,14 @@ import styles from "../../Fields/FormStyle.module.css";
 import InputCapital from "../../Fields/InputCapital";
 import InputTaxaJuros from "../../Fields/InputTaxaJuros";
 import InputTempo from "../../Fields/InputTempo";
+import Tables from "../../Tables";
 
 export default function CalculadoraDeJurosComposto() {
   const [capital, setCapital] = useState("");
   const [taxaJuros, setTaxaJuros] = useState("");
   const [meses, setMeses] = useState("");
   const [resultado, setResultado] = useState(0);
+  const [table, setTable] = useState(false);
 
   function handleCalculator(e: { preventDefault: () => void }) {
     e.preventDefault();
@@ -16,9 +18,11 @@ export default function CalculadoraDeJurosComposto() {
     if (valCapital.includes(",")) {
       valCapital = valCapital.replaceAll(",", ".");
     }
-    setResultado(
-      parseFloat(valCapital) * (parseFloat(taxaJuros) / 100) * parseInt(meses)
-    );
+    const montante =
+      parseFloat(valCapital) *
+      (1 + parseFloat(taxaJuros) / 100) ** parseInt(meses);
+    setResultado(montante - parseFloat(valCapital));
+    setTable(true);
   }
 
   return (
@@ -58,6 +62,15 @@ export default function CalculadoraDeJurosComposto() {
         <h2 className={styles.answer}>
           O rendimento no final do período será de: R$ {resultado.toFixed(2)}.
         </h2>
+        {table && (
+          <Tables
+            jurosTipo="composto"
+            capital={Number(capital)}
+            Mes={Number(meses)}
+            JurosMensal={Number(parseInt(taxaJuros) * 100)}
+            ValorMensal={Number(resultado / parseInt(meses))}
+          />
+        )}
       </div>
     </div>
   );
